@@ -1,5 +1,5 @@
 ConvertMovies
 =============
 
-Batch convert video file by using handbrakecli.
+Batch convert video files by using handbrakecli.
 
