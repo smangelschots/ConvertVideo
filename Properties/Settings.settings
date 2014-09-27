@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ConvertMovies.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="HandBrakeLocation" Type="System.String" Scope="User">
+      <Value Profile="(Default)">I:\Program Files\Handbrake\HandBrakeCLI.exe</Value>
+    </Setting>
+    <Setting Name="TempPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Temp\</Value>
+    </Setting>
+    <Setting Name="LogToFile" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="SourcePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">E:\AHT1</Value>
+    </Setting>
+    <Setting Name="DestinationPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">H:\Movies</Value>
+    </Setting>
+    <Setting Name="HandbrakeSettings" Type="System.String" Scope="User">
+      <Value Profile="(Default)">-i "{0}" -t 1 --angle 1 -c 1-19 -o "{1}"  -f mp4  -4  --decomb -w 720 --loose-anamorphic  --modulus 2 -e x264 -q 20 --vfr -a 1,1 -E faac,copy:ac3 -6 dpl2,auto -R Auto,Auto -B 160,0 -D 0,0 --gain 0,0 --audio-fallback ffac3 -s scan -F --subtitle-burned -N dut  --x264-profile=high  --h264-level="4.1"  --verbose=1</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,6 @@
+I:\Documents\Projects\convertMovies\convertMovies\bin\Debug\convertMovies.exe
+I:\Documents\Projects\convertMovies\convertMovies\bin\Debug\convertMovies.pdb
+I:\Documents\Projects\convertMovies\convertMovies\obj\x86\Debug\convertMovies.exe
+I:\Documents\Projects\convertMovies\convertMovies\obj\x86\Debug\convertMovies.pdb
+I:\Documents\Projects\convertMovies\convertMovies\bin\Debug\ConvertMovies.exe.config
+I:\Documents\Projects\convertMovies\convertMovies\obj\x86\Debug\ConvertMovies.csprojResolveAssemblyReference.cache
