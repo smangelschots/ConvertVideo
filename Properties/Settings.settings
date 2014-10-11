@@ -17,8 +17,38 @@
     <Setting Name="DestinationPath" Type="System.String" Scope="User">
       <Value Profile="(Default)">H:\Movies</Value>
     </Setting>
-    <Setting Name="HandbrakeSettings" Type="System.String" Scope="User">
+    <Setting Name="HandbrakeSettings1" Type="System.String" Scope="User">
       <Value Profile="(Default)">-i "{0}" -t 1 --angle 1 -c 1-19 -o "{1}"  -f mp4  -4  --decomb -w 720 --loose-anamorphic  --modulus 2 -e x264 -q 20 --vfr -a 1,1 -E faac,copy:ac3 -6 dpl2,auto -R Auto,Auto -B 160,0 -D 0,0 --gain 0,0 --audio-fallback ffac3 -s scan -F --subtitle-burned -N dut  --x264-profile=high  --h264-level="4.1"  --verbose=1</Value>
+    </Setting>
+    <Setting Name="HandbrakeSettings2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">-i "{0}" -t 2 --angle 1 -c 1-13 -o "{1}"  -f mp4  -w 720 --loose-anamorphic  --modulus 2 -e x264 -q 20 --vfr -a 1 -E faac -6 dpl2 -R Auto -B 160 -D 0 --gain 0 --audio-fallback ffac3 --subtitle 1 --markers="{3}temp.csv" --x264-preset=veryfast  --x264-profile=main  --h264-level="4.0"  --verbose=1</Value>
+    </Setting>
+    <Setting Name="HandbrakeSettings3" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="HandbrakeSettings4" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="HandbrakeSettings5" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="HandbrakeSettings6" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="HandbrakeSettings7" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="HandbrakeSettings8" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="HandbrakeSettings9" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="HandbrakeSettings10" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="DeleteSource" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>
 </SettingsFile>

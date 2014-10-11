@@ -45,36 +45,63 @@ namespace convertMovies
                     {
                         if (FileExists(destinationDir, item.Name) == false)
                         {
-                            Console.WriteLine(string.Format("--- Start converting {0} -------", item.Name));
-                            var result = ConvertMovie(path, tempPath, item.Name);
-                            string saveFile = string.Format(@"{0}.mp4", Path.Combine(destinationPath, item.Name));
 
-                            if (result.HasErrors == false)
+                            bool convert = true; 
+                            for (int i = 1; i < 10; i++)
                             {
-                                if (File.Exists(result.File))
-                                    File.Move(result.File, saveFile);
-                                if (Settings.Default.LogToFile)
-                                {
-                                    File.AppendAllText(string.Format("{0}_Result.txt", result.File), result.Message);
-                                }
-                            }
-                            else
-                            {
-                                if (File.Exists(result.File))
-                                {
-                                    FileInfo resultFile = new FileInfo(result.File);
-                                    if (resultFile.Length > 314572800)
 
-                                        if (File.Exists(result.File))
-                                            File.Move(result.File, saveFile);
-                                }
+                                if (convert == false) break;
 
-                                File.AppendAllText(string.Format("{0}_error.txt", result.File), result.ErrorMessage);
-                               // File.AppendAllText(string.Format("{0}_Result.txt", result.File), result.Message);
+                                Console.WriteLine(string.Format("--- Start converting {0} -------", item.Name));
+
+                                var result = ConvertMovie(path, tempPath, item.Name,i);
+                                if (result == null)
+                                    break;
+
+                                string saveFile = string.Format(@"{0}.mp4", Path.Combine(destinationPath, item.Name));
+
+                                if (result.HasErrors == false)
+                                {
+                                    if (File.Exists(result.File))
+                                        File.Move(result.File, saveFile);
+                                    if (Settings.Default.LogToFile)
+                                    {
+                                        File.AppendAllText(string.Format("{0}_Result.txt", result.File), result.Message);
+                                    }
+                                }
+                                else
+                                {
+                                    if (File.Exists(result.File))
+                                    {
+                                        FileInfo resultFile = new FileInfo(result.File);
+                                        if (resultFile.Length > 314572800)
+                                        {
+                                            if (File.Exists(result.File))
+                                            {
+                                                File.Move(result.File, saveFile);
+                                                if(Settings.Default.DeleteSource)
+                                                {
+                                                    item.Delete(true);
+                                                }
+                                                convert = false;
+                                            }
+                                               
+                                        }
+                                        else
+                                        {
+                                            File.AppendAllText(string.Format("{0}_error.txt", result.File), result.ErrorMessage);
+                                        }
+                                    }
+                                    // File.AppendAllText(string.Format("{0}_Result.txt", result.File), result.Message);
+                                }
                             }
                         }
                         else
                         {
+                            if (Settings.Default.DeleteSource)
+                            {
+                                item.Delete(true);
+                            }
                             Console.WriteLine(string.Format("**** Skip converting {0} ****", item.Name));
                         }
                     }
@@ -111,10 +138,16 @@ namespace convertMovies
             return false;
         }
 
-        public static Result ConvertMovie(string source, string destination, string folder)
+        public static Result ConvertMovie(string source, string destination, string folder, int settingIndex)
         {
+
+            string settings = Settings.Default[string.Format("HandbrakeSettings{0}", settingIndex)].ToString();
+
+            if (string.IsNullOrEmpty(settings)) return null;
+
             string sourcePath = Path.Combine(source, folder);
             string destinationPath = string.Format(@"{0}.mp4", Path.Combine(destination, folder));
+            
             StringBuilder output = new StringBuilder();
             StringBuilder error = new StringBuilder();
             var result = new Result();
@@ -123,7 +156,7 @@ namespace convertMovies
             {
                 var info = new ProcessStartInfo();
                 info.FileName = Settings.Default.HandBrakeLocation;
-                info.Arguments = string.Format(Settings.Default.HandbrakeSettings, sourcePath, destinationPath);
+                info.Arguments = string.Format(settings, sourcePath, destinationPath,Settings.Default.TempPath );
 
                 process.StartInfo = info;
                 process.StartInfo.UseShellExecute = false;
@@ -138,7 +171,7 @@ namespace convertMovies
                         if (e.Data == null)
                         {
                             outputWaitHandle.Set();
-                           
+
                         }
                         else
                         {
@@ -155,7 +188,7 @@ namespace convertMovies
                         else
                         {
                             error.AppendLine(e.Data);
-                           // Console.Write("\r{0}", e.Data);
+                            // Console.Write("\r{0}", e.Data);
                             result.HasErrors = true;
                         }
                     };

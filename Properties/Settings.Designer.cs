@@ -86,12 +86,132 @@ namespace ConvertMovies.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute(@"-i ""{0}"" -t 1 --angle 1 -c 1-19 -o ""{1}""  -f mp4  -4  --decomb -w 720 --loose-anamorphic  --modulus 2 -e x264 -q 20 --vfr -a 1,1 -E faac,copy:ac3 -6 dpl2,auto -R Auto,Auto -B 160,0 -D 0,0 --gain 0,0 --audio-fallback ffac3 -s scan -F --subtitle-burned -N dut  --x264-profile=high  --h264-level=""4.1""  --verbose=1")]
-        public string HandbrakeSettings {
+        public string HandbrakeSettings1 {
             get {
-                return ((string)(this["HandbrakeSettings"]));
+                return ((string)(this["HandbrakeSettings1"]));
             }
             set {
-                this["HandbrakeSettings"] = value;
+                this["HandbrakeSettings1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute(@"-i ""{0}"" -t 2 --angle 1 -c 1-13 -o ""{1}""  -f mp4  -w 720 --loose-anamorphic  --modulus 2 -e x264 -q 20 --vfr -a 1 -E faac -6 dpl2 -R Auto -B 160 -D 0 --gain 0 --audio-fallback ffac3 --subtitle 1 --markers=""{3}temp.csv"" --x264-preset=veryfast  --x264-profile=main  --h264-level=""4.0""  --verbose=1")]
+        public string HandbrakeSettings2 {
+            get {
+                return ((string)(this["HandbrakeSettings2"]));
+            }
+            set {
+                this["HandbrakeSettings2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string HandbrakeSettings3 {
+            get {
+                return ((string)(this["HandbrakeSettings3"]));
+            }
+            set {
+                this["HandbrakeSettings3"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string HandbrakeSettings4 {
+            get {
+                return ((string)(this["HandbrakeSettings4"]));
+            }
+            set {
+                this["HandbrakeSettings4"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string HandbrakeSettings5 {
+            get {
+                return ((string)(this["HandbrakeSettings5"]));
+            }
+            set {
+                this["HandbrakeSettings5"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string HandbrakeSettings6 {
+            get {
+                return ((string)(this["HandbrakeSettings6"]));
+            }
+            set {
+                this["HandbrakeSettings6"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string HandbrakeSettings7 {
+            get {
+                return ((string)(this["HandbrakeSettings7"]));
+            }
+            set {
+                this["HandbrakeSettings7"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string HandbrakeSettings8 {
+            get {
+                return ((string)(this["HandbrakeSettings8"]));
+            }
+            set {
+                this["HandbrakeSettings8"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string HandbrakeSettings9 {
+            get {
+                return ((string)(this["HandbrakeSettings9"]));
+            }
+            set {
+                this["HandbrakeSettings9"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string HandbrakeSettings10 {
+            get {
+                return ((string)(this["HandbrakeSettings10"]));
+            }
+            set {
+                this["HandbrakeSettings10"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool DeleteSource {
+            get {
+                return ((bool)(this["DeleteSource"]));
+            }
+            set {
+                this["DeleteSource"] = value;
             }
         }
     }
